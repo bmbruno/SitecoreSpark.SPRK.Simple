@@ -1,0 +1,80 @@
+﻿@model SitecoreSpark.SPRK.ViewModels.LogDetailViewModel
+@{
+    Layout = "~/Views/SPRK/Shared/_Layout.cshtml";
+    ViewBag.Title = "Log: " + Model.Title;
+}
+
+@Html.Partial("~/Views/SPRK/Shared/_MainMenu.cshtml")
+
+<div class="container">
+    <h2>@ViewBag.Title</h2>
+</div>
+
+<div class="container content">
+
+    <div class="menu">
+
+        <a href="/sitecore/sprk/Report/PublishLogs" class="btn default"><i class="fa fa-database" aria-hidden="true"></i> Publish Logs</a>
+
+        @if (Model.ModifiedOnly)
+        {
+            <a href="/sitecore/sprk/report/viewlog?log=@Model.FileName" class="btn"><i class="fa fa-file-text" aria-hidden="true"></i> Full Log</a>
+            <a href="/sitecore/sprk/report/download?log=@Model.FileName&modified=true" class="btn"><i class="fa fa-download"></i> Download (CSV)</a>
+        }
+        else
+        {
+            <a href="/sitecore/sprk/report/viewlog?log=@Model.FileName&modified=true" class="btn"><i class="fa fa-retweet" aria-hidden="true"></i> Updated Only</a>
+            <a href="/sitecore/sprk/report/download?log=@Model.FileName" class="btn"><i class="fa fa-download"></i> Download (CSV)</a>
+        }
+
+    </div>
+
+    <p>Results: @Model.Rows.Count</p>
+
+    @if (Model.Rows.Count > 0)
+    {
+        <table id="LogDataTable">
+            <thead>
+                <tr>
+                    <th style="width: 40%;">Item ID</th>
+                    <th>Mode</th>
+                    <th>Result</th>
+                    <th>User</th>
+                    <th>Source DB</th>
+                    <th>Target DB</th>
+                    <th>Date/Time</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (SitecoreSpark.SPRK.ViewModels.LogRowViewModel row in Model.Rows)
+                {
+                    <tr>
+                        <td class="mono narrow-padding"><a href='/sitecore/shell/sitecore/content/Applications/Content Editor.aspx?id=@row.ItemID&fo=@row.ItemID' target="_blank">@row.ItemID</a></td>
+                        <td>@row.Mode</td>
+                        <td>@row.Result</td>
+                        <td>@row.UserName</td>
+                        <td>@row.SourceDB</td>
+                        <td>@row.TargetDB</td>
+                        <td>@row.DateTime</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="message info center">
+            Log is empty.
+        </div>
+    }
+
+    @section PageScripts {
+
+        <script>
+            new Tablesort(document.getElementById('LogDataTable'));
+        </script>
+
+    }
+</div>

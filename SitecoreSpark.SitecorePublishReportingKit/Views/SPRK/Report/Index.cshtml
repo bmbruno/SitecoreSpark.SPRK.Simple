@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/SPRK/Shared/_Layout.cshtml";
+    ViewBag.Title = "Reports";
+}
+
+<div class="container">
+    <h2>@ViewBag.Title</h2>
+</div>
+
+<div class="container content">
+
+    <ul class="report-list">
+        <li>
+            <a href="/sitecore/sprk/Report/PublishLogs" class="">
+                <h3><i class="fa fa-database" aria-hidden="true"></i> Publish Logs</h3>
+                <p>Detailed logs of all items published in Sitecore.</p>
+            </a>
+        </li>
+        <li>
+            <a href="/sitecore/sprk/Report/IncrementalPublishQueue" class="">
+                <h3><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Incremental Publish Queue</h3>
+                <p>List of all items to be published during the next Incremental Publish.</p>
+            </a>
+        </li>
+    </ul>
+
+</div>
+
+<div class="container footer">
+    <p><a href="https://www.brandonbruno.com/sections/development/sprk.html" target="_blank">About SPRK</a></p>
+</div>

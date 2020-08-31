@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link type="text/css" rel="stylesheet" href="~/Content/SPRK/sprk.css" />
+        <link type="text/css" rel="stylesheet" href="~/Content/SPRK/sprk.font-awesome.min.css" />
+
+        <title>@ViewBag.Title - Sitecore Publish Reporting Kit</title>
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>Sitecore Publish Reporting Kit (SPRK)</h1>
+        </div>
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="container">
+                <div class="message error">@TempData["Error"]</div>
+            </div>
+        }
+
+        @RenderBody()
+
+        <script src="~/Content/SPRK/sprk.tablesort.min.js"></script>
+
+        @RenderSection("PageScripts", required: false)
+
+    </body>
+</html>
