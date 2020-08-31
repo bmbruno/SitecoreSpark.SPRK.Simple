@@ -2,7 +2,11 @@
 
 ## About
 
-Sitecore Publish Reporting Kit (SPRK) is a tool for logging all publishing activity in Sitecore at the item level.
+Sitecore Publish Reporting Kit - Simple (SPRK) is a tool for logging all publishing activity in Sitecore at the item level.
+
+This is the "simple" version of the module that uses a less-complicated internal architecture. Publishing in Sitecore may be slowed down a bit compared to the mainline SPRK module.
+
+**This is otherwise feature-complete with the mainline SPRK module.**
 
 * Current version: 2.0.0
 * About & Download: [SPRK (www.brandonbruno.com)](https://www.brandonbruno.com/sections/development/sprk.html)
@@ -25,7 +29,7 @@ Sitecore Publish Reporting Kit (SPRK) is a tool for logging all publishing activ
 ## Requirements
 
 * .NET 4.5.2 or greater
-* Sitecore 8.2 or greater (tested on 8.2.0, 8.2.4, 8.2.6, 9.0.0, 9.0.1, 9.2.0, 10.0.0)
+* Sitecore 9.0 or greater (9.0.0, 9.0.1, 9.2.0, 10.0.0) - might work on versions 8.2+ as well
 
 ## Getting Started
 
@@ -76,13 +80,6 @@ If you're upgrading from a previous version, the Sitecore package will prompt yo
 
 If you don't see a log file after publishing, open the ShowConfig.aspx utility and verify that the following changes were made to `<sitecore>` configuration:
 
-Pipeline processors added under the `<publish>` node:
-
-```
-SitecoreSpark.SPRK.Publishing.Pipelines.Publish.PublishLoggerStartProcessor
-SitecoreSpark.SPRK.Publishing.Pipelines.Publish.PublishLoggerEndProcessor
-```
-
 Pipeline processors added under the `<publishItem>` node:
 
 ```
@@ -106,16 +103,6 @@ SitecoreSpark.SPRK.SparkConfigurator
   ```
   core://sitecore/client/Applications/Launchpad/PageSettings/Buttons/Tools/SPRK Publish Reports
   ```
-
-## Dependency Injection
-
-SPRK uses Sitecore's built-in Microsoft dependecy injection library (8.2+ only). If you are using a third-party DI library, you will have to register a few classes based on the following registrations:
-
-```
-serviceCollection.AddSingleton<ISparkLogger, SparkLogger>();
-serviceCollection.AddTransient<ReportController>();
-serviceCollection.AddTransient<ILogManager<LogItem>, LogManager>();
-```
 
 ## Debug Mode
 
