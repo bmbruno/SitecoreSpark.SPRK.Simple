@@ -6,7 +6,7 @@ Sitecore Publish Reporting Kit - Simple (SPRK) is a tool for logging all publish
 
 This is the "simple" version of the module that uses a less-complicated internal architecture. Publishing in Sitecore may be slowed down a bit compared to the mainline SPRK module.
 
-**This is otherwise feature-complete with the mainline SPRK module.**
+**Some settings and configuration have been simplified.**
 
 * Current version: 2.0.0
 * About & Download: [SPRK (www.brandonbruno.com)](https://www.brandonbruno.com/sections/development/sprk.html)
@@ -50,7 +50,6 @@ The following settings are available:
 * **`SitecoreSpark.SPRK.Enabled`** - enables / disables the SPRK publish logging altogether
 * **`SitecoreSpark.SPRK.DebugMode`** - enables / disables debug features; read more below
 * **`SitecoreSpark.SPRK.LogFolder`** - path where publish logs should be written; by default, this will be Sitecore's default location for logs - "$(dataFolder)/logs/"
-* **`SitecoreSpark.SPRK.LogPrefix`** - filename prefix for log files; all log files are appended with a dateformat (yyyyMMdd)
 * **`SitecoreSpark.SPRK.SourceDatabase`** - content management database; this will usually be `master`
 * **`SitecoreSpark.SPRK.TargetDatabase`** - published content database; this will usually be `web`
 

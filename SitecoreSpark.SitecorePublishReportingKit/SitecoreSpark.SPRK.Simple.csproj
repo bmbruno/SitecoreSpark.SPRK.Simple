@@ -126,6 +126,8 @@
     <Compile Include="Controllers\DebugController.cs" />
     <Compile Include="Mapping\ViewModelMappingExtensions.cs" />
     <Compile Include="Models\PublishQueueItem.cs" />
+    <Compile Include="Pipelines\SPRKInitializer.cs" />
+    <Compile Include="Implementation\LogManager.cs" />
     <Compile Include="Services\ReportService.cs" />
     <Compile Include="ViewModels\DebugViewModel.cs" />
     <Compile Include="ViewModels\PublishQueueViewModel.cs" />
@@ -153,10 +155,7 @@
     <None Include="Properties\PublishProfiles\Local IIS - Release.pubxml" />
     <None Include="Properties\PublishProfiles\Local IIS.pubxml" />
     <Compile Include="Controllers\ReportController.cs" />
-    <Compile Include="Implementation\LogManager.cs" />
-    <Compile Include="Interfaces\ILogManager.cs" />
     <Compile Include="Models\LogItem.cs" />
-    <Compile Include="Publishing\Pipelines\Publish\PublishLoggerStartProcessor.cs" />
     <Compile Include="RegisterCustomRoutes.cs" />
     <Content Include="Content\SPRK\sprk.css" />
     <Content Include="Content\SPRK\sprk.font-awesome.min.css" />
@@ -173,12 +172,8 @@
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Implementation\SparkLogger.cs" />
-    <Compile Include="Interfaces\ISparkLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Publishing\Pipelines\PublishItem\PublishLoggerProcessor.cs" />
-    <Compile Include="Publishing\Pipelines\Publish\PublishLoggerEndProcessor.cs" />
-    <Compile Include="SparkConfigurator.cs" />
+    <Compile Include="Pipelines\PublishLoggerProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

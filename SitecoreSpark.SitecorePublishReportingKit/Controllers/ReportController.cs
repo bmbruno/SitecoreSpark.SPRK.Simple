@@ -3,31 +3,29 @@ using System.Web.Mvc;
 using System.Text;
 using System.Collections.Generic;
 using Sitecore.Data;
-
-using SitecoreSpark.SPRK.Interfaces;
 using SitecoreSpark.SPRK.Models;
 using SitecoreSpark.SPRK.ViewModels;
 using SitecoreSpark.SPRK.Mapping;
 using SitecoreSpark.SPRK.Services;
+using SitecoreSpark.SPRK.Implementation;
 
 namespace SitecoreSpark.SPRK.Controllers
 {
     [Authorize]
     public class ReportController : BaseController
     {
-        private readonly ILogManager<LogItem> _logManager;
+        private readonly LogManager _logManager;
 
-        public ReportController(ILogManager<LogItem> logManager)
+        public ReportController()
         {
-            _logManager = logManager;
+            _logManager = new LogManager();
 
             string folderPath = Sitecore.Configuration.Settings.GetSetting("SitecoreSpark.SPRK.LogFolder");
-            string filePrefix = Sitecore.Configuration.Settings.GetSetting("SitecoreSpark.SPRK.LogPrefix");
 
             // FolderPath should be mapped on the server
             folderPath = Sitecore.IO.FileUtil.MapPath(folderPath);
 
-            _logManager.Initialize(folderPath, filePrefix);
+            _logManager.Initialize(folderPath);
         }
 
         public ActionResult Index()

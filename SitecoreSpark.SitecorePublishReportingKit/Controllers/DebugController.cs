@@ -3,7 +3,6 @@ using System.Web.Mvc;
 using System.Text;
 using System.Collections.Generic;
 using Sitecore.Data;
-using SitecoreSpark.SPRK.Interfaces;
 using SitecoreSpark.SPRK.Models;
 using SitecoreSpark.SPRK.ViewModels;
 using SitecoreSpark.SPRK.Mapping;
@@ -35,8 +34,6 @@ namespace SitecoreSpark.SPRK.Controllers
             viewModel.Enabled = Convert.ToBoolean(Sitecore.Configuration.Settings.GetSetting("SitecoreSpark.SPRK.Enabled"));
             viewModel.DebugMode = Convert.ToBoolean(Sitecore.Configuration.Settings.GetSetting("SitecoreSpark.SPRK.DebugMode"));
             viewModel.LogFolder = Sitecore.Configuration.Settings.GetSetting("SitecoreSpark.SPRK.LogFolder");
-            viewModel.LogPrefix = Sitecore.Configuration.Settings.GetSetting("SitecoreSpark.SPRK.LogPrefix");
-            viewModel.MaxLogBufferSize = Convert.ToInt32(Sitecore.Configuration.Settings.GetSetting("SitecoreSpark.SPRK.MaxLogBufferSize"));
             viewModel.SourceDatabase = Sitecore.Configuration.Settings.GetSetting("SitecoreSpark.SPRK.SourceDatabase");
             viewModel.TargetDatabase = Sitecore.Configuration.Settings.GetSetting("SitecoreSpark.SPRK.TargetDatabase");
 

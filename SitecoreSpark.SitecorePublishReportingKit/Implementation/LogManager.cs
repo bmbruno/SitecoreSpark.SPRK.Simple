@@ -8,12 +8,13 @@ using System.Text;
 
 namespace SitecoreSpark.SPRK.Implementation
 {
-    public class LogManager : ILogManager<LogItem>
+    public class LogManager
     {
         private List<LogItem> _logList;
         private string _logDateFormat = "yyyyMMdd";
         private string _logPrefix;
         private string _csvHeader = "ItemID,Mode,Result,User,SourceDB,TargetDB,DateTime";
+        private readonly string _logFilePrefix = "SPRK.log";
 
         public LogManager() { }
 
@@ -22,14 +23,13 @@ namespace SitecoreSpark.SPRK.Implementation
         /// </summary>
         /// <param name="logFolderPath">Path to log folder. Must be a mapped path (absolute).</param>
         /// <param name="logNamePrefix">Prefix of log file names.</param>
-        public void Initialize (string logFolderPath, string logNamePrefix)
+        public void Initialize (string logFolderPath)
         {
             // Variable init
             _logList = new List<LogItem>();
-            _logPrefix = logNamePrefix;
 
             // Load all files matching filename prefix pattern
-            var allFiles = Directory.GetFiles(logFolderPath, $"{logNamePrefix}*");
+            var allFiles = Directory.GetFiles(logFolderPath, $"{_logFilePrefix}*");
 
             for (int i = 0; i < allFiles.Length; i++)
             {
