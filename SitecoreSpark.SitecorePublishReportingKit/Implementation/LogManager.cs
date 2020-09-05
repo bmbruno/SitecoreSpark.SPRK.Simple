@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
-using SitecoreSpark.SPRK.Interfaces;
 using SitecoreSpark.SPRK.Models;
 using System.Text;
 

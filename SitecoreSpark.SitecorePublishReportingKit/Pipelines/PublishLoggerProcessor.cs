@@ -1,7 +1,6 @@
 ﻿using Sitecore.Data.Items;
 using Sitecore.IO;
 using Sitecore.Publishing.Pipelines.PublishItem;
-using SitecoreSpark.SPRK.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,7 +16,7 @@ namespace SitecoreSpark.SPRK.Pipelines
         private readonly bool _enabled;
         private readonly string _logFilePrefix = "SPRK.log";
 
-        public PublishLoggerProcessor(ISparkLogger logger)
+        public PublishLoggerProcessor()
         {
             _logFolder = Sitecore.Configuration.Settings.GetSetting("SitecoreSpark.SPRK.LogFolder");
             _enabled = Sitecore.Configuration.Settings.GetBoolSetting("SitecoreSpark.SPRK.Enabled", false);
