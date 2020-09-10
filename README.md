@@ -79,16 +79,10 @@ If you're upgrading from a previous version, the Sitecore package will prompt yo
 
 If you don't see a log file after publishing, open the ShowConfig.aspx utility and verify that the following changes were made to `<sitecore>` configuration:
 
-Pipeline processors added under the `<publishItem>` node:
+A pipeline processor added under the `<publishItem>` node:
 
 ```
-SitecoreSpark.SPRK.Publishing.Pipelines.PublishItem.PublishLoggerProcessor
-```
-
-Configurator added under the `<services>` node:
-
-```
-SitecoreSpark.SPRK.SparkConfigurator
+SitecoreSpark.SPRK.Simple.Publishing.Pipelines.PublishItem.PublishLoggerProcessor
 ```
 
 ## Other Notes
