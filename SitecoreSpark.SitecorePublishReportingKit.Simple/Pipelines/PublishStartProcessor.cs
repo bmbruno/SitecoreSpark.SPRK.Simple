@@ -1,5 +1,6 @@
 ﻿using Sitecore.Data.Items;
 using Sitecore.Pipelines;
+using Sitecore.Publishing.Pipelines.Publish;
 using Sitecore.Publishing.Pipelines.PublishItem;
 using System;
 using System.Collections.Generic;
@@ -10,18 +11,18 @@ using System.Web;
 
 namespace SitecoreSpark.SPRK.Simple.Pipelines
 {
-    public class SPRKInitializer
+    public class PublishStartProcessor : PublishProcessor
     {
         private readonly string _logFolder;
         private readonly bool _enabled;
 
-        public SPRKInitializer()
+        public PublishStartProcessor()
         {
             _logFolder = Sitecore.Configuration.Settings.GetSetting("SitecoreSpark.SPRK.LogFolder");
             _enabled = Sitecore.Configuration.Settings.GetBoolSetting("SitecoreSpark.SPRK.Enabled", false);
         }
 
-        public void Process(PipelineArgs args)
+        public override void Process(PublishContext context)
         {
             // Only run if SPRK is enabled in config
             if (!_enabled)
