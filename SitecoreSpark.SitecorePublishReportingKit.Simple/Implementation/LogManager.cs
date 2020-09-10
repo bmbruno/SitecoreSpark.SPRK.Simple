@@ -11,7 +11,6 @@ namespace SitecoreSpark.SPRK.Implementation
     {
         private List<LogItem> _logList;
         private string _logDateFormat = "yyyyMMdd";
-        private string _logPrefix;
         private string _csvHeader = "ItemID,Mode,Result,User,SourceDB,TargetDB,DateTime";
         private readonly string _logFilePrefix = "SPRK.log";
 
@@ -177,7 +176,7 @@ namespace SitecoreSpark.SPRK.Implementation
             if (String.IsNullOrEmpty(logFileName))
                 return false;
 
-            return (logFileName.StartsWith(this._logPrefix));
+            return (logFileName.StartsWith(this._logFilePrefix));
         }
     }
 }
