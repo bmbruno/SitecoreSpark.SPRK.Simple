@@ -1,4 +1,4 @@
-﻿@model SitecoreSpark.SPRK.ViewModels.LogDetailViewModel
+﻿@model SitecoreSpark.SPRK.Simple.ViewModels.LogDetailViewModel
 @{
     Layout = "~/Views/SPRK/Shared/_Layout.cshtml";
     ViewBag.Title = "Log: " + Model.Title;
@@ -47,7 +47,7 @@
             </thead>
             <tbody>
 
-                @foreach (SitecoreSpark.SPRK.ViewModels.LogRowViewModel row in Model.Rows)
+                @foreach (SitecoreSpark.SPRK.Simple.ViewModels.LogRowViewModel row in Model.Rows)
                 {
                     <tr>
                         <td class="mono narrow-padding"><a href='/sitecore/shell/sitecore/content/Applications/Content Editor.aspx?id=@row.ItemID&fo=@row.ItemID' target="_blank">@row.ItemID</a></td>

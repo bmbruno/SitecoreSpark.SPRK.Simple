@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace SitecoreSpark.SPRK.Pipelines
+namespace SitecoreSpark.SPRK.Simple.Pipelines
 {
     public class PublishLoggerProcessor : PublishItemProcessor
     {

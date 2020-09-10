@@ -1,6 +1,6 @@
 ﻿using Sitecore.Publishing.Pipelines.Publish;
 using SitecoreSpark.SPRK.Models;
-using SitecoreSpark.SPRK.ViewModels;
+using SitecoreSpark.SPRK.Simple.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace SitecoreSpark.SPRK
+namespace SitecoreSpark.SPRK.Simple
 {
     public class RegisterCustomRoute
     {
@@ -17,7 +17,7 @@ namespace SitecoreSpark.SPRK
 
         public virtual void Register()
         {
-            RouteTable.Routes.MapRoute("SitecoreSpark.SPRK.Index", "sitecore/sprk/{controller}/{action}/{id}", new { controller = "Report", action = "Index", id = UrlParameter.Optional });
+            RouteTable.Routes.MapRoute("SitecoreSpark.SPRK.Simple.Index", "sitecore/sprk/{controller}/{action}/{id}", new { controller = "Report", action = "Index", id = UrlParameter.Optional });
         }
     }
 }

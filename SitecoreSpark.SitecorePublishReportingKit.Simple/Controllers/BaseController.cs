@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace SitecoreSpark.SPRK.Controllers
+namespace SitecoreSpark.SPRK.Simple.Controllers
 {
     public class BaseController : Controller
     {

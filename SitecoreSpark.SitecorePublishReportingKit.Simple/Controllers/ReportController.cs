@@ -2,14 +2,13 @@
 using System.Web.Mvc;
 using System.Text;
 using System.Collections.Generic;
-using Sitecore.Data;
 using SitecoreSpark.SPRK.Models;
-using SitecoreSpark.SPRK.ViewModels;
+using SitecoreSpark.SPRK.Simple.ViewModels;
 using SitecoreSpark.SPRK.Mapping;
 using SitecoreSpark.SPRK.Services;
 using SitecoreSpark.SPRK.Implementation;
 
-namespace SitecoreSpark.SPRK.Controllers
+namespace SitecoreSpark.SPRK.Simple.Controllers
 {
     [Authorize]
     public class ReportController : BaseController
