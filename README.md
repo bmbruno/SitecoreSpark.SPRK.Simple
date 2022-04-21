@@ -6,6 +6,10 @@ Sitecore Publish Reporting Kit - Simple (SPRK) is a tool for logging all publish
 
 This is the "simple" version of the module that uses a less-complicated internal architecture. Publishing in Sitecore may be slowed down a bit compared to the mainline SPRK module.
 
+## Maintenance Notice
+
+As of 2022, this module will be updated and maintained for all 10.x versions of Sitecore XM/XP (likely 10.3 and 10.4). This module will not support future Sitecore composable CMS products, such as Sitecore XM Cloud.
+
 **Some settings and configuration have been simplified.**
 
 * Current version: 2.0.0
